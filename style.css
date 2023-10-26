@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+@font-face {
+    font-family: "impact";
+    src: url(./assets/font/unicode.impact.woff) format(woff);
+}
+@font-face {
+    font-family: "roboto";
+    src: url(./assets/font/Roboto-Regular-webfont.woff) format(woff);
+}
+@font-face {
+    font-family: "roboto thin";
+    src: url(./assets/font/Roboto-Thin-webfont.woff) format(woff);
+}
+@font-face {
+    font-family: "roboto italic";
+    src: url(./assets/font/Roboto-ThinItalic-webfont.woff) format(woff);
+}
+@font-face {
+    font-family: "roboto bold";
+    src: url(./assets/font/Roboto-Bold-webfont.woff) format(woff);
+}
+:root {
+    --text-hover-1: #c1121f;
+    --bg-color-1: #e01e37;
+    --bg-color-2: #c71f37;
+    --bg-color-3: #a71e34;
+    --bg-color-4: #85182a;
+    --transition-duration: 300ms;
+    --breakpoint-mobile: 600px;
+}
+/********** global styling */
+body {
+    min-height: 100vh;
+    background-color: #fff;
+    color: black;
+}
+article {
+    min-height: 60vh;
+}
+.article-even {
+    min-height: 100px;
+    background-color: black;
+    color: white;
+}
+.article-odd {
+    min-height: 100px;
+    background-color: white;
+    color: black;
+}
+.article-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 1rem;
+    padding: 3rem;
+    width: 65%;
+}
+.article-img {
+    width: 35%;
+    min-height: 300px;
+}
+@media screen and (width < 600px) {
+    .article-txt,
+    .article-img {
+        width: 100%;
+        align-items: center;
+    }
+}
+.max-content-width {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+ul {
+    list-style-type: none;
+}
+@media screen and (width < 750px) {
+    .text-hidden {display: none;
+    }
+}
+.section-header {
+    width: 300px;
+}
+.section-subheader {
+    width: 300px;
+    color: #666;
+    opacity: 70%;
+    font-style: italic;
+}
+.arrow-down {
+    --border-radius: 30px;
+    border-top: var(--border-radius) black solid;
+    border-right: var(--border-radius) solid transparent;
+    border-left: var(--border-radius) solid transparent;
+    width: 1px;
+    height: 1px;
+    margin: 0 auto;
+    display: none;
+}
+.arrow-up {
+    --border-radius: 30px;
+    border-bottom: var(--border-radius) black solid;
+    border-right: var(--border-radius) solid transparent;
+    border-left: var(--border-radius) solid transparent;
+    width: 1px;
+    height: 1px;
+    margin: 0 auto;
+}
+/********** mini navbar */
+.nav-mini {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+    background-color: white;
+    color: black;
+    font-size: 0.7rem;
+    padding: 5px;
+}
+.nav-mini p:hover strong {
+    color: var(--bg-color-1);
+    transition-duration: var(--transition-duration);
+
+}
+.nav-mini-fcb {
+    background-image: url(./images/icon-facebook-black.png);
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    transition-duration: var(--transition-duration);
+
+}
+.nav-mini-ins {
+    background-image: url(./images/icon-instagram-black.png);
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    transition-duration: var(--transition-duration);
+}
+.nav-mini-fcb:hover {
+    background-image: url(./images/icon-facebook-red.png);
+}
+.nav-mini-ins:hover {
+    background-image: url(./images/icon-instagram-red.png);
+}
+
+/********** main navbar */
+.nav-main-bg {
+    width: 100%;
+    background-image: linear-gradient(to bottom, #000000, #00000080);
+}
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    width: clamp(350px, 90%, 1200px);
+}
+.nav-main a img {
+    margin: 0 auto;
+    height: clamp(80px, 100%, 120px);
+    width: clamp(50px, 100%, 400px);
+}
+.nav-main ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+}
+@media screen and (width < 999px) {
+    .nav-main ul {
+        display: none;
+    }
+    .nav-main :first-child {
+        margin: 0 auto;
+    }
+}
+@media screen and (width < 600px) {
+    .nav-main ul :first-child {
+        display: none;
+    }
+    
+}
+.nav-main ul li {
+    display: flex;
+    align-items: center;
+
+    min-height: 100px;
+}
+.nav-main > ul a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+
+    border: 1px solid white;
+    color: white;
+    padding: 1rem 0.5rem;
+    min-width: 5rem;
+    transition-duration: var(--transition-duration);
+}
+.nav-main > ul a:hover {
+    background-color: var(--bg-color-4);
+}
+
+/********** hero */
+header {
+    margin: 0 auto;
+    background-color: black;
+    background-image: url(./images/img-deadlift-dark.jpg);
+    background-size: clamp(600px, 90%, 1100px);
+    background-repeat: no-repeat;
+    background-position: right;
+    min-height: 100vh;
+}
+@media screen and (width < 600px) {
+    header {
+        background-position: left;
+    }
+}
+.hero-quote {
+    margin-top: 3rem;
+    max-width: 400px;
+}
+.hero-quote :nth-last-child(2) {
+    text-align: right;
+}
+.quote-start,
+.quote-end {
+    width: 40px;
+}
+.quote-end {
+    float: right;
+}
+#hero {
+
+    min-height: 400px;
+    color: white;
+    margin: 0 auto;
+    text-shadow: 0 0 5px #000;
+    padding: 1rem;
+    padding-top: 4rem;
+}
+#hero * {
+    font-family: "roboto";
+}
+#hero h1 {
+    font-family: "roboto thin";
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+}
+#hero > :first-child {
+    color: #999;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    max-width: 550px;
+    text-align: center;
+    border-bottom: 2px solid var(--bg-color-3);
+}
+
+/********** content */
+#about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    letter-spacing: 1px;
+}
+.article-img-about {
+    background-image: url(./images/img-pullup-dark.jpg);
+    background-size: cover;
+    
+}
+#choose-path {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5rem 0;
+    gap: 1rem;
+}
+#choose-path > :nth-child(1) {
+    background-color: var(--bg-color-1);
+}
+#choose-path > :nth-child(2) {
+    background-color: var(--bg-color-2);
+}
+#choose-path > :nth-child(3) {
+    background-color: var(--bg-color-3);
+    
+}
+#choose-path > :nth-child(4) {
+   background-color: var(--bg-color-4); 
+}
+.path-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 1rem;
+    padding: 1rem;
+    width: 250px;
+    min-height: 275px;
+    text-align: center;
+    color: white;
+}
+@media screen and (width < 600px) {
+    .path-card {
+        width: 90%;
+    }
+}
+.path-card a {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+
+    margin: 0 auto;
+    padding: 0.5rem;
+    width: 60%;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    transition-duration: var(--transition-duration);
+}
+.path-card a:hover {
+    color:pink
+}
+.path-card:hover a,
+.path-card:hover p {
+    color: white;
+}
+.path-card:hover a {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+
+}
+.path-card a:hover {
+    letter-spacing: 3px;
+}
+.card-img-holder {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    transition-duration: var(--transition-duration);
+}
+.path-card:hover .card-img-holder {
+    border-color: #fff;
+}
+.card-img-1 {
+    background-image: url(./images/icon-mindset.png);
+    background-size: contain
+}
+.card-img-2 {
+    background-image: url(./images/icon-sport.png);
+    background-size: contain
+}
+.card-img-3 {
+    background-image: url(./images/icon-back-flex.png);
+    background-size: contain
+}
+.card-img-4 {
+    background-image: url(./images/icon-physical-activity.png);
+    background-size: contain
+}
+.path-card:hover .card-img-1 {
+    background-image: url(./images/icon-mindset-white.png);
+    background-size: contain
+}
+.path-card:hover .card-img-2 {
+    background-image: url(./images/icon-sport-white.png);
+    background-size: contain
+}
+.path-card:hover .card-img-3 {
+    background-image: url(./images/icon-back-flex-white.png);
+    background-size: contain
+}
+.path-card:hover .card-img-4 {
+    background-image: url(./images/icon-physical-activity-white.png);
+    background-size: contain
+}
